@@ -113,7 +113,7 @@ if __name__ == '__main__':
         sys.exit(STATE_CRITICAL)
 
     if float(flow_control_paused) > float(args.fcp):
-        print 'CRITICAL: wsrep_flow_control_paused is >', args.fcp
+        print 'CRITICAL: wsrep_flow_control_paused is above limit %s' % (str(args.fcp))
         sys.exit(STATE_CRITICAL)
 
     if args.primary:
@@ -124,7 +124,7 @@ if __name__ == '__main__':
             sys.exit(STATE_CRITICAL)
 
         if cluster_status != 'Primary':
-            print 'CRITICAL: Node is not primary'
+            print 'CRITICAL: Node is not primary (%s)' % (cluster_status)
             sys.exit(STATE_CRITICAL)
 
     ready = get_ready(cursor)
@@ -134,7 +134,7 @@ if __name__ == '__main__':
         sys.exit(STATE_CRITICAL)
 
     if ready != 'ON':
-        print 'CRITICAL: Node is not ready'
+        print 'CRITICAL: Node is not ready (%s)' % (ready)
         sys.exit(STATE_CRITICAL)
 
     connected = get_connected(cursor)
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         sys.exit(STATE_CRITICAL)
 
     if connected != 'ON':
-        print 'CRITICAL: Node is not connected'
+        print 'CRITICAL: Node is not connected (%s)' % (connected)
         sys.exit(STATE_CRITICAL)
 
     local_state_comment = get_local_state_comment(cursor)
@@ -154,7 +154,7 @@ if __name__ == '__main__':
         sys.exit(STATE_CRITICAL)
 
     if local_state_comment != 'Synced':
-        print 'CRITICAL: Node is not synced'
+        print 'CRITICAL: Node is not synced (%s)' % (local_state_comment)
         sys.exit(STATE_CRITICAL)
 
     cluster_size = get_cluster_size(cursor)
