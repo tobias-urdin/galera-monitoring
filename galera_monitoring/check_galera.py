@@ -164,12 +164,12 @@ if __name__ == '__main__':
         sys.exit(STATE_CRITICAL)
 
     if args.critical is not None:
-        if int(cluster_size) <= int(args.critical):
+        if int(cluster_size) < int(args.critical):
                 print 'CRITICAL: Nodes in cluster is %s' % (cluster_size)
                 sys.exit(STATE_CRITICAL)
 
     if args.warning is not None:
-        if int(cluster_size) <= int(args.warning):
+        if int(cluster_size) < int(args.warning):
                 print 'WARNING: Nodes in cluster is %s' % (cluster_size)
                 sys.exit(STATE_WARNING)
 
