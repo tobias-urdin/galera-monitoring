@@ -2,20 +2,19 @@
 # -*- encoding: utf-8 -*-
 
 # Galera Monitoring
-# Copyright (C) 2015 Crystone Sverige AB
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 2 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright (C) 2015 Tobias Urdin
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 import sys
 import os
@@ -105,14 +104,14 @@ class CoverageCommand(Command):
 setup(name='galera-monitoring',
       version='1.0',
       description='Galera Monitoring checks for Nagios.',
-      author='Crystone Sverige AB',
-      author_email='support@crystone.se',
-      license='GNU GPL 2',
+      author='Tobias Urdin',
+      author_email='tobias.urdin@gmail.com',
+      license='Apache License 2.0',
       packages=['galera_monitoring'],
       package_dir={
           'galera_monitoring': 'galera_monitoring',
       },
-      url='https://github.com/crystone/galera-monitoring',
+      url='https://github.com/tobias-urdin/galera-monitoring',
       cmdclass={
           'test': TestCommand,
           'pep8': Pep8Command,
